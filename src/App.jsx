@@ -43,7 +43,7 @@ function App(){
   const load=async()=>{if(!API_URL)return;try{const list=await (await fetch(API_URL)).json();const m={};list.forEach(x=>m[x.slot]=x);setBook(m)}catch(e){say('לא הצלחנו לטעון את התורים התפוסים')}};
   useEffect(()=>{
     try{setMyIds(JSON.parse(localStorage.getItem('my-ids')||'[]'))}catch(e){}
-    if(API_URL){load();const t=setInterval(load,100);return()=>clearInterval(t)}
+    if(API_URL){load();const t=setInterval(load,1000);return()=>clearInterval(t)}
     try{const v=localStorage.getItem('nail-bookings');if(v)setBook(JSON.parse(v))}catch(e){}
   },[]);
   const save=b=>{setBook(b);try{localStorage.setItem('nail-bookings',JSON.stringify(b))}catch(e){}};
