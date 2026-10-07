@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import './index.css';
 // כתובת ה-API מ-mockapi.io נקבעת בקובץ .env (VITE_API_URL), למשל: https://xxxx.mockapi.io/api/v1/bookings
 // כל עוד המשתנה ריק, האתר עובד במצב הדגמה (שמירה בדפדפן בלבד).
-const API_URL=import.meta.env.VITE_API_URL||"";
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://6aae754a606bd915d110d395.mockapi.io/api/bookings";
 const MONTHS=['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
 const DAYS=['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
 const SERVICES=[['מניקור ג׳ל',140],['לק רגיל',90],['בניית ציפורניים',220],['מילוי ג׳ל',160],['פדיקור ספא',180]];
